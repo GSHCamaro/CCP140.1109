@@ -1,4 +1,6 @@
 #include <iostream>
+#include "data.cpp"
+#include "endereco.cpp"
 using namespace std;
 
 class Pessoa{
@@ -6,11 +8,12 @@ class Pessoa{
     string nome;
     string sobrenome;
     long cpf;
-    public:
-        Pessoa(){}
+    Data nascimento;
+    Endereco endereco;
 
-        Pessoa(string nome, string sobrenome, long cpf):
-        nome{nome},sobrenome{sobrenome}
+    public:
+        Pessoa(string nome, string sobrenome, long cpf, int dia, int mes, int ano, Endereco endereco):
+        nome{nome},sobrenome{sobrenome}, nascimento(dia, mes, ano), endereco(endereco)
         {
             this->cpf = cpf;
         }
@@ -37,4 +40,10 @@ class Pessoa{
         long getCpf(){
             return cpf;
     }
+        string getNascimento(){
+            return this->nascimento.getData();
+        }
+        string getEndereco(){
+            return this->endereco.getEndereco();
+        }
 };
