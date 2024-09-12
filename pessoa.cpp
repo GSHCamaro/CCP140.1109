@@ -7,6 +7,13 @@ class Pessoa{
     string sobrenome;
     long cpf;
     public:
+        Pessoa(){}
+
+        Pessoa(string nome, string sobrenome, long cpf){
+            this->
+        }
+
+
     void setNome(string nome){
         this->nome = nome;
     }
